@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.14
+Name: control
+Formal-Name: CONTROL
+App-ID: com.example.control
+Version: 0.0.1
+Home-page: https://example.com/control
+Download-URL: https://example.com/control
+Author: Santanu Basu Ray
+Author-email: santanubasuray@gmail.com
+Summary: My first application on TOGA

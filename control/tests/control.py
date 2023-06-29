@@ -3,7 +3,9 @@ from toga.style.pack import COLUMN, LEFT, RIGHT, ROW, Pack, Font
 
 
 def build(app):
+    
     #Defining the Boxes
+    
     ams_netid = toga.Box(style=Pack(direction=ROW, padding=5))
     port = toga.Box(style= Pack(direction=ROW, padding = 5))
     x = toga.Box()
@@ -46,7 +48,8 @@ def build(app):
     button6 = toga.Button("Reset", style=Pack(padding_left= 20 ,  font_size = 20, font_family= ("serif"), background_color = ("#f2800f")))
     button7 = toga.Button("Port", style=Pack(padding_left=40 ,  font_size = 20, font_family= ("serif"), background_color = ("#FFFFFF")))
 
-
+    #arranging the childrens
+    
     ams_netid.add(amsnetid_label)
     ams_netid.add(ams_netid_input)
     ams_netid.add(button1)
@@ -55,12 +58,11 @@ def build(app):
     port.add(button7)
     
     
-    # x.add(amsnetid_label)
     x.add(x_label)
     x.add(x_input)
     x.add(button2)
     
-    # y.add(button1)
+    
     y.add(y_label)
     y.add(y_input)
     y.add(button3)

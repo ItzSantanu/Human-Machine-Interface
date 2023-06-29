@@ -1,60 +1,59 @@
 import toga
-from toga.style.pack import COLUMN, LEFT, RIGHT, ROW, Pack
+from toga.style.pack import COLUMN, LEFT, RIGHT, ROW, Pack, Font
 
 
 def build(app):
+    #Defining the Boxes
     ams_netid = toga.Box(style=Pack(direction=ROW, padding=5))
+    port = toga.Box(style= Pack(direction=ROW, padding = 5))
     x = toga.Box()
     y = toga.Box()
     z = toga.Box()
     Roll = toga.Box()
     Pitch = toga.Box()
     Yaw = toga.Box()
-    #Connect = toga.Box()
-    ##calculate_IKIN = toga.Box()
-    #Start = toga.Box()
-    #Stop = toga.Box()
-    #Halt = toga.Box()
-    #Reset = toga.Box()
-    box = toga.Box(style=Pack(background_color = ("#92b6e8")))
+    box = toga.Box(style=Pack(background_color = ("#FFFFFF")))
 
-    ams_netid_input = toga.TextInput(readonly=True, style=Pack(width=100 , padding_left = 40))
-    x_input = toga.TextInput(style=Pack(padding_left = 40))
-    y_input = toga.TextInput(style=Pack(padding_left = 40))
-    z_input = toga.TextInput(style=Pack(padding_left = 40))
-    Roll_input = toga.TextInput(style=Pack(padding_left = 40))
-    Pitch_input = toga.TextInput(style=Pack(padding_left = 40))
-    Yaw_input = toga.TextInput(style=Pack(padding_left = 40))
+    #Defining the Input
 
-    amsnetid_label = toga.Label("AMS_NET_ID")#, style=Pack(text_align=RIGHT))
-    x_label = toga.Label("Enter the value of X", style=Pack(text_align=RIGHT))
-    y_label = toga.Label("Enter the value of Y", style=Pack(text_align=RIGHT))
-    z_label = toga.Label("Enter the value of Z", style=Pack(text_align=RIGHT))
-    Roll_label = toga.Label("Enter the value of Roll (in Angles)", style=Pack(text_align=RIGHT))
-    Pitch_label = toga.Label("Enter the value of Pitch (in Angles)", style=Pack(text_align=RIGHT))
-    Yaw_label = toga.Label("Enter the value of Yaw (in Angles)", style=Pack(text_align=RIGHT))
+    ams_netid_input = toga.TextInput(style=Pack(font_size = 20, padding_left = 140, width = 200))
+    port_input = toga.TextInput(style=Pack(font_size = 20, padding_left = 140, width = 200))
+    x_input = toga.TextInput(style=Pack(padding_left = 90 , font_size = 20 , width =200))
+    y_input = toga.TextInput(style=Pack(padding_left = 90, font_size = 20 , width =200))
+    z_input = toga.TextInput(style=Pack(padding_left = 140 , font_size = 20, width = 200))
+    Roll_input = toga.TextInput(style=Pack(padding_left = 40 , font_size = 20 , width = 200))
+    Pitch_input = toga.TextInput(style=Pack(padding_left = 40 ,font_size = 20 , width = 200))
+    Yaw_input = toga.TextInput(style=Pack(padding_left = 40, padding_top = 10 , width = 200, font_size = 20))
 
-   ##def ikin_connection(widget):
-   ##     try:
-   ##         c_input.value = (float(f_input.value) - 32.0) * 5.0 / 9.0
-   ##     except ValueError:
-   ##         c_input.value = "???"
+    #Defining the Labels
 
-    
-    
-    ##button1 = toga.Button("Calculate Ikin", on_press=calculate)
+    amsnetid_label = toga.Label("AMS_NET_ID", style=Pack( width=250, font_size = 20, font_family= ("serif") , background_color = ("#FFFFFF")))
+    port_label = toga.Label("Enter Port number", style=Pack(width=250, padding_left = 0, font_size = 20, font_family= ("serif"),  background_color = ("#FFFFFF")))
+    x_label = toga.Label("Enter the value of X", style=Pack( width =300 , font_size = 20, font_family= ("serif"),  background_color = ("#FFFFFF") ))
+    y_label = toga.Label("Enter the value of Y", style=Pack(  width =300 , font_size = 20, font_family= ("serif"),   background_color = ("#FFFFFF")))
+    z_label = toga.Label("Enter the value of Z", style=Pack( width = 250 , font_size = 20, font_family= ("serif"),  background_color = ("#FFFFFF")))
+    Roll_label = toga.Label("Enter the value of Roll", style=Pack( width = 350 , font_size = 20, font_family= ("serif"),  background_color = ("#FFFFFF") ))
+    Pitch_label = toga.Label("Enter the value of Pitch", style=Pack( width = 350 , font_size = 20 , font_family= ("serif"),  background_color = ("#FFFFFF")))
+    Yaw_label = toga.Label("Enter the value of Yaw", style=Pack(padding_top= 10 , width =350, font_size = 20, font_family= ("serif"),  background_color = ("#FFFFFF")))
 
-    button1 = toga.Button("Connect to PLC", style=Pack(width=100,padding_left=45))
-    button2 = toga.Button("Calculate Ikin", style=Pack(alignment= "right", padding_left = 20))
-    button3 = toga.Button("Power",style=Pack(padding_left= 40))
-    button4 = toga.Button("Halt",style=Pack(padding_left= 40))
-    button5 = toga.Button("Stop",style=Pack(padding_left= 40))
-    button6 = toga.Button("Reset")
+    #Defining the Buttons
+
+    button1 = toga.Button("Connect to PLC", style=Pack(width=250,padding_left=40 ,  font_size = 20, font_family= ("serif"), background_color = ("#acc5fa")))
+    button2 = toga.Button("Calculate Ikin", style=Pack(alignment= "right", padding_left = 40 ,  font_size = 20, font_family= ("serif")))
+    button3 = toga.Button("Power",style=Pack(padding_left= 40, background_color="#13f20f" ,  font_size = 20, font_family= ("serif")))
+    button4 = toga.Button("Halt",style=Pack(padding_left= 40 ,  font_size = 20, font_family= ("serif"), background_color =("#f2ae0f")))
+    button5 = toga.Button("Stop",style=Pack(padding_left= 40 ,  font_size = 20, font_family= ("serif"), background_color =("#f23224")))
+    button6 = toga.Button("Reset", style=Pack(padding_left= 20 ,  font_size = 20, font_family= ("serif"), background_color = ("#f2800f")))
+    button7 = toga.Button("Port", style=Pack(padding_left=40 ,  font_size = 20, font_family= ("serif"), background_color = ("#FFFFFF")))
 
 
     ams_netid.add(amsnetid_label)
     ams_netid.add(ams_netid_input)
     ams_netid.add(button1)
+    port.add(port_label)
+    port.add(port_input)
+    port.add(button7)
+    
     
     # x.add(amsnetid_label)
     x.add(x_label)
@@ -82,6 +81,7 @@ def build(app):
     Yaw.add(Yaw_input)
     
     box.add(ams_netid)
+    box.add(port)
     box.add(x)
     box.add(y)
     box.add(z)
